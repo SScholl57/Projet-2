@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" >
+    <title>Character stat calculator</title>
+    <link href="style.css" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript" src="Script.js" defer></script>
+    <main class="">
+        <button onclick="Dice20()">Lancer un dès 20</button><br><br>
+        <p id="diceDiv">0</p>
+        <p id="diceDiv20"></p>
+        <div class="flexv">
+             <p> Level : </p>
+            <p id=levelDiv>0</p>
+            <div class="flexh">
+            <p> Experience : </p>
+            <button onclick="levelUp()">Get Experience !</button>
+            </div>
+            <div class="flexh">
+                <div id="experienceDiv">0</div>
+                <div>/</div>
+                <div id="experienceRequiredDiv">0</div>
+            </div>
+            <p> Max HP :</p>
+            <p id=maxHitPointDiv>0</p>
+            <p> Max MP :</p>
+            <p id=maxManaPointDiv>0</p>
+            <p> Stat points: </p>
+            <p id=statPointDiv>0</p>
+            <div class="flex">
+                <div class =flexh>
+                    <div class = flexv>
+                        <p>Characteristics</p>
+                        <p> Strength </p>
+                        <p> Perception </p>
+                        <p> Endurance </p>
+                        <p> Charisma </p>
+                        <p> Intelligence </p>
+                        <p> Agility </p>
+                        <p> Luck </p>
+                    </div>    
+                    <div class = "flexv spacebetween">
+                        <p></p>
+                        <button onclick="addstr(1)">+</button>
+                        <button onclick="addper(1)">+</button>
+                        <button onclick="addend(1)">+</button>
+                        <button onclick="addcha(1)">+</button>
+                        <button onclick="addint(1)">+</button>
+                        <button onclick="addagi(1)">+</button>
+                        <button onclick="addluc(1)">+</button>
+                    </div>
+                    <div class = "flexv spacebetween">
+                        <p>Base</p>
+                        <p id="strengthDiv">0</p>   
+                        <p id="perceptionDiv">0</p> 
+                        <p id="enduranceDiv">0</p>
+                        <p id="charismaDiv">0</p>
+                        <p id="intelligenceDiv">0</p>
+                        <p id="agilityDiv">0</p>
+                        <p id="luckDiv">0</p>
+                    </div>    
+                    <div class = "flexv spacebetween"> 
+                        <p></p>
+                        <button onclick="addstr(-1)">-</button>
+                        <button onclick="addper(-1)">-</button>
+                        <button onclick="addend(-1)">-</button>
+                        <button onclick="addcha(-1)">-</button>
+                        <button onclick="addint(-1)">-</button>
+                        <button onclick="addagi(-1)">-</button>
+                        <button onclick="addluc(-1)">-</button>
+                    </div>
+                    <div class = "flexv spacebetween"> 
+                        <!-- Tableau des Bonus : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage -->
+                        <p>Bonus</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                    </div> 
+                    <div class = "flexv spacebetween">
+                        <!-- Tableau des Malus : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage-->
+                        <p>Malus</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                    </div>
+                    <div class = "flexv spacebetween">
+                        <!-- Statistique Total : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage-->
+                        <p>Total</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                        <p id="">0</p>
+                    </div>  
+                </div>                     
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

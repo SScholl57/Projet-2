@@ -1,0 +1,17 @@
+.flexv {
+    display: flex;
+    flex-direction: column;
+ }
+  
+ .flexh {
+    display: flex;
+    flex-direction: row;
+ }
+
+ .spacebetween {
+   justify-content: space-between;
+ }
+
+ .border {
+   border: solid black 3px;
+ }
