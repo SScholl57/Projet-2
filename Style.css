@@ -15,3 +15,31 @@
  .border {
    border: solid black 3px;
  }
+
+ .justifycontent-center {
+  justify-content: center;
+ }
+
+ .alignself-center {
+  align-self: center;
+ }
+
+ .text-center {
+  text-align: center;
+ }
+
+ .bonus {
+  color: blue;
+ }
+
+ .malus {
+  color: red;
+ }
+
+ .paddingright_20{
+  padding-right: 20px;
+ }
+
+ .lineheight{
+  line-height: 2;
+ }

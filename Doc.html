@@ -12,42 +12,47 @@
 
 <body>
     <script type="text/javascript" src="Script.js" defer></script>
-    <main class="">
-        <button onclick="Dice20()">Lancer un dès 20</button><br><br>
+    <main class="flexv justifycontent-center border text-center">
+        <button onclick="Dice20()" class="">Lancer un dès 20</button><br><br>
         <p id="diceDiv">0</p>
         <p id="diceDiv20"></p>
-        <div class="flexv">
-             <p> Level : </p>
-            <p id=levelDiv>0</p>
-            <div class="flexh">
-            <p> Experience : </p>
+        <div class="flexv justifycontent-center">
+            <div> Level : </div>
+            <div id=levelDiv>0</div>
+            <div class="flexh justifycontent-center">
+            <div> Experience :</div>
             <button onclick="levelUp()">Get Experience !</button>
             </div>
-            <div class="flexh">
+            <div class="flexh justifycontent-center">
                 <div id="experienceDiv">0</div>
                 <div>/</div>
                 <div id="experienceRequiredDiv">0</div>
             </div>
-            <p> Max HP :</p>
-            <p id=maxHitPointDiv>0</p>
-            <p> Max MP :</p>
-            <p id=maxManaPointDiv>0</p>
-            <p> Stat points: </p>
-            <p id=statPointDiv>0</p>
-            <div class="flex">
-                <div class =flexh>
-                    <div class = flexv>
-                        <p>Characteristics</p>
-                        <p> Strength </p>
-                        <p> Perception </p>
-                        <p> Endurance </p>
-                        <p> Charisma </p>
-                        <p> Intelligence </p>
-                        <p> Agility </p>
-                        <p> Luck </p>
+            <div class="flexh justifycontent-center">
+            <div> Max HP :</div>
+                <button onclick="damageHealth()">Damage Health</button>
+                <button onclick="healHealth()">Heal !</button>
+            </div>
+            <div class="flexh justifycontent-center">
+                <div id=actualHitPointDiv>0</div>
+                <div>/</div>
+                <div id="maxHitPointDiv">0</div>
+            </div>
+            <div> Max MP :</div>
+            <div id=maxManaPointDiv>0</div>
+            <div> Stat points: </div>
+            <div id=statPointDiv>0</div>
+                <div class ="flexh justifycontent-center border alignself-center">
+                    <div class = "flexv spacebetween paddingright_20" >
+                        <div> Strength </div>
+                        <div> Perception </div>
+                        <div> Endurance </div>
+                        <div> Charisma </div>
+                        <div> Intelligence </div>
+                        <div> Agility </div>
+                        <div> Luck </div>
                     </div>    
-                    <div class = "flexv spacebetween">
-                        <p></p>
+                    <div class = "flexv spacebetween paddingright_20">
                         <button onclick="addstr(1)">+</button>
                         <button onclick="addper(1)">+</button>
                         <button onclick="addend(1)">+</button>
@@ -56,18 +61,16 @@
                         <button onclick="addagi(1)">+</button>
                         <button onclick="addluc(1)">+</button>
                     </div>
-                    <div class = "flexv spacebetween">
-                        <p>Base</p>
-                        <p id="strengthDiv">0</p>   
-                        <p id="perceptionDiv">0</p> 
-                        <p id="enduranceDiv">0</p>
-                        <p id="charismaDiv">0</p>
-                        <p id="intelligenceDiv">0</p>
-                        <p id="agilityDiv">0</p>
-                        <p id="luckDiv">0</p>
+                    <div class = "flexv spacebetween paddingright_20">
+                        <div id="strengthDiv">0</div>   
+                        <div id="perceptionDiv">0</div> 
+                        <div id="enduranceDiv">0</div>
+                        <div id="charismaDiv">0</div>
+                        <div id="intelligenceDiv">0</div>
+                        <div id="agilityDiv">0</div>
+                        <div id="luckDiv">0</div>
                     </div>    
-                    <div class = "flexv spacebetween"> 
-                        <p></p>
+                    <div class = "flexv spacebetween paddingright_20"> 
                         <button onclick="addstr(-1)">-</button>
                         <button onclick="addper(-1)">-</button>
                         <button onclick="addend(-1)">-</button>
@@ -76,41 +79,40 @@
                         <button onclick="addagi(-1)">-</button>
                         <button onclick="addluc(-1)">-</button>
                     </div>
-                    <div class = "flexv spacebetween"> 
+                    <div class = "flexv spacebetween bonus paddingright_20"> 
                         <!-- Tableau des Bonus : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage -->
-                        <p>Bonus</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
+                        
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
                     </div> 
-                    <div class = "flexv spacebetween">
+                    <div class = "flexv spacebetween malus paddingright_20">
                         <!-- Tableau des Malus : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage-->
-                        <p>Malus</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
+                       
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
                     </div>
-                    <div class = "flexv spacebetween">
+                    <div class = "flexv spacebetween paddingright_20 ">
                         <!-- Statistique Total : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage-->
-                        <p>Total</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
-                        <p id="">0</p>
+                        
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
+                        <div id="">0</div>
                     </div>  
                 </div>                     
-            </div>
         </div>
     </main>
 </body>

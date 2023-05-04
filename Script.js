@@ -13,7 +13,8 @@ let agility = 1;
 let luck = 1;
 let perception = 1;
 let statPoint = 20;
-let maxHitPoint = 30
+let maxHitPoint = 30;
+let actualHitPoint = 30;
 let maxManaPoint = 10;
 
 function RandomExp(min, max) {
@@ -51,6 +52,7 @@ function levelUp(){
         console.log(`Vous avez ${statPoint} points de stat à dépenser.`)
         maxHitPoint = maxHitPoint + endurance;
         console.log(`Vos PV maximum sont maintenant de ${maxHitPoint}.`)
+        actualHitPoint = maxHitPoint;
         updateLvl()
         updatestr()
         updateend()
@@ -188,6 +190,8 @@ function addluc(amount) {
 function updatehp() {
     let maxHitPointDiv = document.getElementById("maxHitPointDiv");
     maxHitPointDiv.innerText = maxHitPoint;
+    let actualHitPointDiv = document.getElementById("actualHitPointDiv");
+    actualHitPointDiv.innerText = actualHitPoint;
 }
 
 function updatestr() {
@@ -247,15 +251,52 @@ function updateExp() {
     experienceDiv.innerText = experience;
 }
 
-function updateLvl () {
+function updateLvl() {
     let levelDiv = document.getElementById("levelDiv");
     levelDiv.innerText = level;
+}
+
+function damageHealth() {
+  if (actualHitPoint == 0) {
+    console.log("Vous êtes déjà mort")
+    return
+  }
+
+  actualHitPoint = actualHitPoint - (Math.ceil(Math.random() * 10))
+  let actualHitPointDiv = document.getElementById("actualHitPointDiv");
+  actualHitPointDiv.innerText = actualHitPoint;
+  if (actualHitPoint < 0) {
+    actualHitPoint = 0
+    console.log("Vous êtes mort.")
+    let actualHitPointDiv = document.getElementById("actualHitPointDiv");
+    actualHitPointDiv.innerText = actualHitPoint;
+  }
+}
+
+function healHealth() {
+  if (actualHitPoint == maxHitPoint) {
+    console.log("Vous êtes complètement guéri")
+    return
+  }
+
+  actualHitPoint = actualHitPoint + (Math.ceil(Math.random() * 10))
+  let actualHitPointDiv = document.getElementById("actualHitPointDiv");
+  actualHitPointDiv.innerText = actualHitPoint;
+  if (actualHitPoint > maxHitPoint) {
+    actualHitPoint = maxHitPoint
+    console.log("Vous êtes guéri.")
+    let actualHitPointDiv = document.getElementById("actualHitPointDiv");
+    actualHitPointDiv.innerText = actualHitPoint;
+  }
+
 }
 
 let levelDiv = document.getElementById("levelDiv");
 levelDiv.innerText = level;
 let maxHitPointDiv = document.getElementById("maxHitPointDiv");
 maxHitPointDiv.innerText = maxHitPoint;
+let actualHitPointDiv = document.getElementById("actualHitPointDiv");
+actualHitPointDiv.innerText = actualHitPoint;
 let maxManaPointDiv = document.getElementById("maxManaPointDiv");
 maxManaPointDiv.innerText = maxManaPoint;
 let strengthDiv = document.getElementById("strengthDiv");
