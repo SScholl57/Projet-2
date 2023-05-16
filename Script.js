@@ -62,6 +62,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/Argonien.png"
 }
   if(raceSelect.value === "Breton"){
       racialStrength = 0;
@@ -73,6 +74,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/Breton.png"
 }
   if(raceSelect.value === "DarkElf"){
       racialStrength = 0;
@@ -84,6 +86,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/DarkElf.png"
   }
   if(raceSelect.value === "HighElf"){
       racialStrength = 0;
@@ -95,6 +98,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/HighElf.png"
   }
   if(raceSelect.value === "Imperial"){
       racialStrength = 0;
@@ -106,6 +110,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/Imperial.png"
   }
   if(raceSelect.value === "Khajiit"){
       racialStrength = 0;
@@ -117,6 +122,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/Khajiit.png"
   }
   if(raceSelect.value === "Nord"){
       racialStrength = 1;
@@ -128,6 +134,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/Nord.png"
   }
   if(raceSelect.value === "Orc"){
       racialStrength = 2;
@@ -139,6 +146,7 @@ function onRaceSelectorChanged(){
       racialLuck = 0;
       updateBonus()
       updateFull()
+      document.getElementById("raceImg").src="Image/Orc.png"
   }
   if(raceSelect.value === "Redguard"){
     racialStrength = 1;
@@ -150,6 +158,7 @@ function onRaceSelectorChanged(){
     racialLuck = 0;
     updateBonus()
     updateFull()
+    document.getElementById("raceImg").src="Image/Redguard.png"
   }
   if(raceSelect.value === "WoodElf"){
     racialStrength = 0;
@@ -161,6 +170,7 @@ function onRaceSelectorChanged(){
     racialLuck = 0;
     updateBonus()
     updateFull()
+    document.getElementById("raceImg").src="Image/WoodElf.png"
   }
 }
 
