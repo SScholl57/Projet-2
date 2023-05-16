@@ -36,6 +36,7 @@ let fullLuck = 1;
 let statPoint = 20;
 let maxHitPoint = 30;
 let actualHitPoint = 30;
+let actualManaPoint = 10;
 let maxManaPoint = 10;
 const raceSelector = document.getElementById('raceSelect');
 
@@ -165,6 +166,12 @@ function RandomExp(min, max) {
 }
 
 function levelUp(){
+    const expInput = document.getElementById('InputExp').valueAsNumber;
+    if(isNaN(expInput)){
+        console.log('what')
+        return
+    }
+
     if(statPoint != 0)
         return
 
@@ -173,11 +180,11 @@ function levelUp(){
         return
     }
 
-    experience = experience + (Math.ceil(Math.random() * 10));
+    experience = experience + expInput;
     console.log(`Votre expérience total est de ${experience}.`)
     updateExp()
 
-    if(experience >= experienceRequired){
+    while(experience >= experienceRequired){
         level = level + 1;
         experience = experience - experienceRequired;
         experienceRequired = experienceRequired + (level * 10);
@@ -425,15 +432,16 @@ function updateBonus(){
 }
 
 function damageHealth() {
+  const hpInput = document.getElementById('InputHp').valueAsNumber;
   if (actualHitPoint == 0) {
     console.log("Vous êtes déjà mort")
     return
   }
 
-  actualHitPoint = actualHitPoint - (Math.ceil(Math.random() * 10))
+  actualHitPoint = actualHitPoint - hpInput
   let actualHitPointDiv = document.getElementById("actualHitPointDiv");
   actualHitPointDiv.innerText = actualHitPoint;
-  if (actualHitPoint < 0) {
+  if (actualHitPoint <= 0) {
     actualHitPoint = 0
     console.log("Vous êtes mort.")
     let actualHitPointDiv = document.getElementById("actualHitPointDiv");
@@ -442,22 +450,60 @@ function damageHealth() {
 }
 
 function healHealth() {
+  const hpInput = document.getElementById('InputHp').valueAsNumber;
   if (actualHitPoint == maxHitPoint) {
     console.log("Vous êtes complètement guéri")
     return
   }
 
-  actualHitPoint = actualHitPoint + (Math.ceil(Math.random() * 10))
+  actualHitPoint = actualHitPoint +  hpInput
   let actualHitPointDiv = document.getElementById("actualHitPointDiv");
   actualHitPointDiv.innerText = actualHitPoint;
-  if (actualHitPoint > maxHitPoint) {
+  if (actualHitPoint >= maxHitPoint) {
     actualHitPoint = maxHitPoint
     console.log("Vous êtes guéri.")
     let actualHitPointDiv = document.getElementById("actualHitPointDiv");
     actualHitPointDiv.innerText = actualHitPoint;
   }
-
 }
+
+
+function costMana() {
+  const manaInput = document.getElementById('InputMana').valueAsNumber;
+  if (actualManaPoint == 0) {
+    console.log("Vous n'avez plus de mana")
+    return
+  }
+
+  actualManaPoint = actualManaPoint - manaInput
+  let actualManaPointDiv = document.getElementById("actualManaPointDiv");
+  actualManaPointDiv.innerText = actualManaPoint;
+  if (actualManaPoint <= 0) {
+    actualManaPoint = 0
+    console.log("Vous avez vidé votre mana.")
+    let actualManaPointDiv = document.getElementById("actualManaPointDiv");
+    actualManaPointDiv.innerText = actualManaPoint;
+  }
+}
+
+function regenMana() {
+  const manaInput = document.getElementById('InputMana').valueAsNumber;
+  if (actualManaPoint == maxManaPoint) {
+    console.log("Votre mana est déjà à son maximum")
+    return
+  }
+
+  actualManaPoint = actualManaPoint +  manaInput
+  let actualManaPointDiv = document.getElementById("actualManaPointDiv");
+  actualManaPointDiv.innerText = actualManaPoint;
+  if (actualManaPoint >= maxManaPoint) {
+    actualManaPoint = maxManaPoint
+    console.log("Votre mana à atteint son maximum.")
+    let actualManaPointDiv = document.getElementById("actualManaPointDiv");
+    actualManaPointDiv.innerText = actualManaPoint;
+  }
+}
+
 
 function updateFull (){
   fullStrength = strength + bonusStrength;
@@ -489,6 +535,8 @@ let maxHitPointDiv = document.getElementById("maxHitPointDiv");
 maxHitPointDiv.innerText = maxHitPoint;
 let actualHitPointDiv = document.getElementById("actualHitPointDiv");
 actualHitPointDiv.innerText = actualHitPoint;
+let actualManaPointDiv = document.getElementById("actualManaPointDiv");
+actualManaPointDiv.innerText = actualManaPoint;
 let maxManaPointDiv = document.getElementById("maxManaPointDiv");
 maxManaPointDiv.innerText = maxManaPoint;
 let strengthDiv = document.getElementById("strengthDiv");

@@ -33,6 +33,7 @@
             <div id=levelDiv>0</div>
             <div class="flexh justifycontent-center">
             <div> Experience :</div>
+            <input type="number" id="InputExp" placeholder="0" step="1" min="0" max="999" />
             <button onclick="levelUp()">Get Experience !</button>
             </div>
             <div class="flexh justifycontent-center">
@@ -41,17 +42,27 @@
                 <div id="experienceRequiredDiv">0</div>
             </div>
             <div class="flexh justifycontent-center">
-            <div> Max HP :</div>
-                <button onclick="damageHealth()">Damage Health</button>
-                <button onclick="healHealth()">Heal !</button>
-            </div>
+                <div> Max HP :</div>
+                    <button onclick="damageHealth()">Damage Health</button>
+                    <input type="number" id="InputHp" placeholder="0" step="1" min="0" max="999" />
+                    <button onclick="healHealth()">Heal !</button>
+                </div>
             <div class="flexh justifycontent-center">
                 <div id=actualHitPointDiv>0</div>
                 <div>/</div>
                 <div id="maxHitPointDiv">0</div>
             </div>
-            <div> Max MP :</div>
-            <div id=maxManaPointDiv>0</div>
+            <div class="flexh justifycontent-center">
+                <div> Max MP : </div>
+                    <button onclick="costMana()">Mana Cost</button>
+                    <input type="number" id="InputMana" placeholder="0" step="1" min="0" max="999" />
+                    <button onclick="regenMana()">Mana Regen</button>
+            </div>
+            <div class="flexh justifycontent-center">
+                    <div id=actualManaPointDiv>0</div>
+                    <div>/</div>
+                    <div id=maxManaPointDiv>0</div>
+            </div>
             <div> Stat points: </div>
             <div id=statPointDiv>0</div>
                 <div class ="flexh justifycontent-center border alignself-center">
@@ -125,6 +136,30 @@
                     </div>  
                 </div>                     
         </div>
+
+        <div class="flexv">
+        <!-- ^ Div pour la totalité de la fenêtre -->
+            <Div>
+                <!-- Name -->
+            </Div>
+            <Div class="flexh">
+                <!-- Fenêtre de status -->
+                <div class="flexv"> 
+                    <!-- Status -->
+                    <div>
+                        <!-- HP/Mana -->
+                    </div>
+                    <div>
+                        <!-- Niveau/race/classe -->
+                    </div>
+                    <div>
+                        <!-- Statistique -->
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+            </Div>
+        </div> 
     </main>
 </body>
 
