@@ -19,13 +19,20 @@ let racialCharisma = 0;
 let racialIntelligence = 0;
 let racialAgility = 0;
 let racialLuck = 0;
-let bonusStrength = racialStrength;
-let bonusPerception = racialPerception;
-let bonusEndurance = racialEndurance;
-let bonusCharisma = racialCharisma;
-let bonusIntelligence = racialIntelligence;
-let bonusAgility = racialAgility;
-let bonusLuck = racialLuck;
+let classStrength = 0;
+let classPerception = 0;
+let classEndurance = 0;
+let classCharisma = 0;
+let classIntelligence = 0;
+let classAgility = 0;
+let classLuck = 0;
+let bonusStrength = racialStrength + classStrength;
+let bonusPerception = racialPerception + classPerception;
+let bonusEndurance = racialEndurance + classEndurance;
+let bonusCharisma = racialCharisma + classCharisma;
+let bonusIntelligence = racialIntelligence + classIntelligence;
+let bonusAgility = racialAgility + classAgility;
+let bonusLuck = racialLuck + classLuck;
 let fullStrength = 1;
 let fullPerception = 1;
 let fullEndurance = 1;
@@ -41,6 +48,8 @@ let maxManaPoint = 10;
 const raceSelector = document.getElementById('raceSelect');
 
 raceSelector.addEventListener('input', onRaceSelectorChanged);
+
+
 
 function onRaceSelectorChanged(){
   if(raceSelect.value === "Argonian"){
@@ -153,6 +162,244 @@ function onRaceSelectorChanged(){
     updateBonus()
     updateFull()
   }
+}
+
+const classSelector = document.getElementById('classSelect');
+
+classSelector.addEventListener('input', onClassSelectorChanged);
+
+function onClassSelectorChanged () {
+  if(classSelect.value === "Acrobat"){
+    classStrength = 0;
+    classPerception = 0;
+    classEndurance = 1;
+    classCharisma = 0;
+    classIntelligence = 0;
+    classAgility = 1;
+    classLuck = 0;
+    updateBonus()
+    updateFull()
+}
+if(classSelect.value === "Agent"){
+  classStrength = 0;
+  classPerception = 1;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 0;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Archer"){
+  classStrength = 1;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 0;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Assassin"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 1;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Barbarian"){
+  classStrength = 2;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 0;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Bard"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 1;
+  classCharisma = 1;
+  classIntelligence = 1;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Battlemage"){
+  classStrength = 1;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 1;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Crusader"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 1;
+  classCharisma = 0;
+  classIntelligence = 1;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Healer"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 2;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Knight"){
+  classStrength = 1;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 1;
+  classIntelligence = 0;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Mage"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 2;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Monk"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 1;
+  classCharisma = 0;
+  classIntelligence = 0;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Nightblade"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 1;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Pilgrim"){
+  classStrength = 0;
+  classPerception = 1;
+  classEndurance = 0;
+  classCharisma = 1;
+  classIntelligence = 0;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Rogue"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 1;
+  classIntelligence = 0;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Scout"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 1;
+  classCharisma = 0;
+  classIntelligence = 0;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Sorcerer"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 1;
+  classCharisma = 0;
+  classIntelligence = 1;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Spellsword"){
+  classStrength = 1;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 1;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Thief"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 0;
+  classAgility = 2;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Warrior"){
+  classStrength = 1;
+  classPerception = 0;
+  classEndurance = 1;
+  classCharisma = 0;
+  classIntelligence = 0;
+  classAgility = 0;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
+if(classSelect.value === "Witchhunter"){
+  classStrength = 0;
+  classPerception = 0;
+  classEndurance = 0;
+  classCharisma = 0;
+  classIntelligence = 1;
+  classAgility = 1;
+  classLuck = 0;
+  updateBonus()
+  updateFull()
+}
 }
 
 function RandomExp(min, max) {
@@ -362,13 +609,13 @@ function updateLvl() {
 }
 
 function updateBonus(){
-    bonusStrength = racialStrength;
-    bonusPerception = racialPerception;
-    bonusEndurance = racialEndurance;
-    bonusCharisma = racialCharisma;
-    bonusIntelligence = racialIntelligence;
-    bonusAgility = racialAgility;
-    bonusLuck = racialLuck;
+    bonusStrength = racialStrength + classStrength;
+    bonusPerception = racialPerception + classPerception;
+    bonusEndurance = racialEndurance + classEndurance;
+    bonusCharisma = racialCharisma + classCharisma;
+    bonusIntelligence = racialIntelligence + classIntelligence;
+    bonusAgility = racialAgility + classAgility;
+    bonusLuck = racialLuck + classLuck;
 }
 
 function damageHealth() {
@@ -439,7 +686,7 @@ function regenMana() {
   const manaInput = document.getElementById('InputMana').valueAsNumber;
   if(isNaN(manaInput))
   return
-  
+
   if (actualManaPoint == maxManaPoint) {
     console.log("Votre mana est déjà à son maximum")
     return
