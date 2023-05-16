@@ -12,154 +12,167 @@
 
 <body>
     <script type="text/javascript" src="Script.js" defer></script>
-    <main class="flexv justifycontent-center border text-center">
-        <button onclick="Dice20()" class="">Lancer un dès 20</button><br><br>
-        <p id="diceDiv">0</p>
-        <p id="diceDiv20"></p>
-        <div class="flexv justifycontent-center">
-            <select id="raceSelect">
-                <option value="Argonian">Argonian</option>
-                <option value="Breton">Breton</option>
-                <option value="DarkElf">Dark Elf</option>
-                <option value="HighElf">High Elf</option>    
-                <option value="Imperial">Imperial</option>     
-                <option value="Khajiit">Khajiit</option>      
-                <option value="Nord">Nord</option>
-                <option value="Orc">Orc</option>
-                <option value="Redguard">Redguard</option>
-                <option value="WoodElf">Wood Elf</option>
-            </select>
-            <div> Level : </div>
-            <div id=levelDiv>0</div>
-            <div class="flexh justifycontent-center">
-            <div> Experience :</div>
-            <input type="number" id="InputExp" placeholder="0" step="1" min="0" max="999" />
-            <button onclick="levelUp()">Get Experience !</button>
-            </div>
-            <div class="flexh justifycontent-center">
-                <div id="experienceDiv">0</div>
-                <div>/</div>
-                <div id="experienceRequiredDiv">0</div>
-            </div>
-            <div class="flexh justifycontent-center">
-                <div> Max HP :</div>
-                    <button onclick="damageHealth()">Damage Health</button>
-                    <input type="number" id="InputHp" placeholder="0" step="1" min="0" max="999" />
-                    <button onclick="healHealth()">Heal !</button>
-                </div>
-            <div class="flexh justifycontent-center">
-                <div id=actualHitPointDiv>0</div>
-                <div>/</div>
-                <div id="maxHitPointDiv">0</div>
-            </div>
-            <div class="flexh justifycontent-center">
-                <div> Max MP : </div>
-                    <button onclick="costMana()">Mana Cost</button>
-                    <input type="number" id="InputMana" placeholder="0" step="1" min="0" max="999" />
-                    <button onclick="regenMana()">Mana Regen</button>
-            </div>
-            <div class="flexh justifycontent-center">
-                    <div id=actualManaPointDiv>0</div>
-                    <div>/</div>
-                    <div id=maxManaPointDiv>0</div>
-            </div>
-            <div> Stat points: </div>
-            <div id=statPointDiv>0</div>
-                <div class ="flexh justifycontent-center border alignself-center">
-                    <div class = "flexv spacebetween paddingright_20" >
-                        <div> Strength </div>
-                        <div> Perception </div>
-                        <div> Endurance </div>
-                        <div> Charisma </div>
-                        <div> Intelligence </div>
-                        <div> Agility </div>
-                        <div> Luck </div>
-                    </div>    
-                    <div class = "flexv spacebetween paddingright_20">
-                        <button onclick="addstr(1)">+</button>
-                        <button onclick="addper(1)">+</button>
-                        <button onclick="addend(1)">+</button>
-                        <button onclick="addcha(1)">+</button>
-                        <button onclick="addint(1)">+</button>
-                        <button onclick="addagi(1)">+</button>
-                        <button onclick="addluc(1)">+</button>
-                    </div>
-                    <div class = "flexv spacebetween paddingright_20">
-                        <div id="strengthDiv">0</div>   
-                        <div id="perceptionDiv">0</div> 
-                        <div id="enduranceDiv">0</div>
-                        <div id="charismaDiv">0</div>
-                        <div id="intelligenceDiv">0</div>
-                        <div id="agilityDiv">0</div>
-                        <div id="luckDiv">0</div>
-                    </div>    
-                    <div class = "flexv spacebetween paddingright_20"> 
-                        <button onclick="addstr(-1)">-</button>
-                        <button onclick="addper(-1)">-</button>
-                        <button onclick="addend(-1)">-</button>
-                        <button onclick="addcha(-1)">-</button>
-                        <button onclick="addint(-1)">-</button>
-                        <button onclick="addagi(-1)">-</button>
-                        <button onclick="addluc(-1)">-</button>
-                    </div>
-                    <div class = "flexv spacebetween bonus paddingright_20"> 
-                        <!-- Tableau des Bonus : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage -->
-                        <div id="bonusStrengthDiv">0</div>
-                        <div id="bonusPerceptionDiv">0</div>
-                        <div id="bonusEnduranceDiv">0</div>
-                        <div id="bonusCharismaDiv">0</div>
-                        <div id="bonusIntelligenceDiv">0</div>
-                        <div id="bonusAgilityDiv">0</div>
-                        <div id="bonusLuckDiv">0</div>
-                    </div> 
-                    <div class = "flexv spacebetween malus paddingright_20">
-                        <!-- Tableau des Malus : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage-->
-                       
-                        <div id="">0</div>
-                        <div id="">0</div>
-                        <div id="">0</div>
-                        <div id="">0</div>
-                        <div id="">0</div>
-                        <div id="">0</div>
-                        <div id="">0</div>
-                    </div>
-                    <div class = "flexv spacebetween paddingright_20 ">
-                        <!-- Statistique Total : Restera vide en attendant l'ajout d'un Pseudo-Inventaire pour le personnage-->
-                        
-                        <div id="fullStrengthDiv">0</div>
-                        <div id="fullPerceptionDiv">0</div>
-                        <div id="fullEnduranceDiv">0</div>
-                        <div id="fullCharismaDiv">0</div>
-                        <div id="fullIntelligenceDiv">0</div>
-                        <div id="fullAgilityDiv">0</div>
-                        <div id="fullLuckDiv">0</div>
-                    </div>  
-                </div>                     
-        </div>
-
-        <div class="flexv">
+    <main class="flexv justifycontent-center text-center sizemain">
+        <div class="flexv border sizestatus alignself-center">
         <!-- ^ Div pour la totalité de la fenêtre -->
             <Div>
                 <!-- Name -->
+                <input type="text" placeholder="Character Name">
             </Div>
             <Div class="flexh">
                 <!-- Fenêtre de status -->
-                <div class="flexv"> 
+                <div class="flexv size_30 border marginside"> 
                     <!-- Status -->
-                    <div>
+
+                    <div class="flexh border margintop_10 marginside">
                         <!-- HP/Mana -->
+
+                        <div class="flexv size_50 justifycontent-center ">
+                            <!-- HP/MANA -->
+                            
+                            <div>Health :</div>
+                            <div>Magic :</div>
+                        </div>
+
+                        <div class="flexv size_50">
+                            <!-- VALEUR -->
+                            <div class="flexh justifycontent-center">
+                                <div id=actualHitPointDiv>0</div>
+                                <div>/</div>
+                                <div id="maxHitPointDiv">0</div>
+                            </div>
+                            <div class="flexh justifycontent-center">
+                                <div id=actualManaPointDiv>0</div>
+                                <div>/</div>
+                                <div id=maxManaPointDiv>0</div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div>
+
+                    <div class="flexh margintop_10 border marginside">
                         <!-- Niveau/race/classe -->
+                        <div class="flexv size_50 ">
+                            <!-- NIVEAU/RACE/CLASSE -->
+                            <div>Level : </div>
+                            <div>Experience :</div>
+                            <div>Race :</div>
+                            <div>Classe :</div>
+                            <div> Stat points: </div>
+                            
+                        </div>
+
+                        <div class="flexv size_50">
+                            <!-- VALEUR -->
+                            <div id=levelDiv>0</div>
+                            <div class="flexh justifycontent-center">
+                                <div id="experienceDiv">0</div>
+                                <div>/</div>
+                                <div id="experienceRequiredDiv">0</div>
+                            </div>
+                            <select id="raceSelect">
+                                <option value="Argonian">Argonian</option>
+                                <option value="Breton">Breton</option>
+                                <option value="DarkElf">Dark Elf</option>
+                                <option value="HighElf">High Elf</option>    
+                                <option value="Imperial">Imperial</option>     
+                                <option value="Khajiit">Khajiit</option>      
+                                <option value="Nord">Nord</option>
+                                <option value="Orc">Orc</option>
+                                <option value="Redguard">Redguard</option>
+                                <option value="WoodElf">Wood Elf</option>
+                            </select>
+                            <select id="classeSelect">
+                                <option value="">Class</option>
+                            </select>
+                            <div id=statPointDiv>0</div>
+                            
+                        </div>
                     </div>
-                    <div>
+
+                    <div class="flexh margintop_10 border marginside">
                         <!-- Statistique -->
+                        <div class="flexh size_50">
+                            <div class="flexv spacebetween">
+                                <button onclick="addstr(-1)">-</button>
+                                <button onclick="addper(-1)">-</button>
+                                <button onclick="addend(-1)">-</button>
+                                <button onclick="addcha(-1)">-</button>
+                                <button onclick="addint(-1)">-</button>
+                                <button onclick="addagi(-1)">-</button>
+                                <button onclick="addluc(-1)">-</button>
+                            </div>
+                            <div class="flexv spacebetween flexgrowth_100">
+                                <!-- Statistique nommée + Bouton-->
+                                <div> Strength </div>
+                                <div> Perception </div>
+                                <div> Endurance </div>
+                                <div> Charisma </div>
+                                <div> Intelligence </div>
+                                <div> Agility </div>
+                                <div> Luck </div>
+                            </div>
+                            <div class="flexv spacebetween">
+                                <button onclick="addstr(1)">+</button>
+                                <button onclick="addper(1)">+</button>
+                                <button onclick="addend(1)">+</button>
+                                <button onclick="addcha(1)">+</button>
+                                <button onclick="addint(1)">+</button>
+                                <button onclick="addagi(1)">+</button>
+                                <button onclick="addluc(1)">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="flexv spacearound alignself-stretch size_50">
+                            <!-- VALEUR -->
+                            <div id="fullStrengthDiv">0</div>
+                            <div id="fullPerceptionDiv">0</div>
+                            <div id="fullEnduranceDiv">0</div>
+                            <div id="fullCharismaDiv">0</div>
+                            <div id="fullIntelligenceDiv">0</div>
+                            <div id="fullAgilityDiv">0</div>
+                            <div id="fullLuckDiv">0</div>
+                        </div>
                     </div>
+
                 </div>
-                <div></div>
-                <div></div>
+                    <!-- Stuff -->
+                    Stuff
+                <div>
+
+                </div>
+
+                <div class=""> 
+                    <!-- Liste bonus -->
+                    Liste
+                </div>
             </Div>
         </div> 
+
+        <div class="flexv">
+            <div>
+                <button onclick="Dice20()" class="">Lancer un dès 20</button><br><br>
+                <p id="diceDiv">0</p>
+                <p id="diceDiv20"></p>
+            </div>
+            <div class="flexh justifycontent-center">
+                <input type="number" id="InputExp" placeholder="0" step="1" min="0" max="999" />
+                <button onclick="levelUp()">Get Experience !</button>
+            </div>
+
+            <div class="flexh justifycontent-center">
+                <button onclick="damageHealth()">Damage Health</button>
+                <input type="number" id="InputHp" placeholder="0" step="1" min="0" max="999" />
+                <button onclick="healHealth()">Heal !</button>
+            </div>
+
+            <div class="flexh justifycontent-center">    
+                <button onclick="costMana()">Mana Cost</button>
+                <input type="number" id="InputMana" placeholder="0" step="1" min="0" max="999" />
+                <button onclick="regenMana()">Mana Regen</button>
+            </div>
+        </div>
+ 
     </main>
 </body>
 

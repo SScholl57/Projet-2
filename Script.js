@@ -167,10 +167,8 @@ function RandomExp(min, max) {
 
 function levelUp(){
     const expInput = document.getElementById('InputExp').valueAsNumber;
-    if(isNaN(expInput)){
-        console.log('what')
+    if(isNaN(expInput))
         return
-    }
 
     if(statPoint != 0)
         return
@@ -236,7 +234,7 @@ function addstr(amount) {
   
     strength = Math.max(strength + amount, 1);
     statPoint = statPoint - amount
-    updatestr();
+    updatestat();
     updateFull();
 }
 
@@ -252,7 +250,7 @@ function addint(amount) {
   
     intelligence = Math.max(intelligence + amount, 1);
     statPoint = statPoint - amount
-    updateint();
+    updatestat();
     updateFull();
 }
 
@@ -268,7 +266,7 @@ function addend(amount) {
   
     endurance = Math.max(endurance + amount, 1);
     statPoint = statPoint - amount
-    updateend();
+    updatestat();
     updateFull();
 }
 
@@ -284,7 +282,7 @@ function addcha(amount) {
   
     charisma = Math.max(charisma + amount, 1);
     statPoint = statPoint - amount
-    updatecha();
+    updatestat();
     updateFull();
 }
 
@@ -300,7 +298,7 @@ function addagi(amount) {
   
     agility = Math.max(agility + amount, 1);
     statPoint = statPoint - amount
-    updateagi();
+    updatestat();
     updateFull();
 }
 
@@ -316,7 +314,7 @@ function addper(amount) {
   
     perception = Math.max(perception + amount, 1);
     statPoint = statPoint - amount
-    updateper();
+    updatestat();
     updateFull();
 }
 
@@ -332,7 +330,7 @@ function addluc(amount) {
 
     luck = Math.max(luck + amount, 1);
     statPoint = statPoint - amount
-    updateluc();
+    updatestat();
     updateFull();
 }
 
@@ -345,56 +343,12 @@ function updatehp() {
     actualHitPointDiv.innerText = actualHitPoint;
 }
 
-function updatestr() {
-    let strengthDiv = document.getElementById("strengthDiv");
-    strengthDiv.innerText = strength;
-    let statPointDiv = document.getElementById("statPointDiv");
-    statPointDiv.innerText = statPoint;
-}
-
-function updateper() {
-    let perceptionDiv = document.getElementById("perceptionDiv");
-    perceptionDiv.innerText = perception;
-    let statPointDiv = document.getElementById("statPointDiv");
-    statPointDiv.innerText = statPoint;
-}
-
-function updateend() {
-    let enduranceDiv = document.getElementById("enduranceDiv");
-    enduranceDiv.innerText = endurance;
-    let statPointDiv = document.getElementById("statPointDiv");
-    statPointDiv.innerText = statPoint;
-}
-
-function updatecha() {
-    let charismaDiv = document.getElementById("charismaDiv");
-    charismaDiv.innerText = charisma;
-    let statPointDiv = document.getElementById("statPointDiv");
-    statPointDiv.innerText = statPoint;
-}
-
-function updateint() {
-    let intelligenceDiv = document.getElementById("intelligenceDiv");
-    intelligenceDiv.innerText = intelligence;
+function updatestat() {
     let statPointDiv = document.getElementById("statPointDiv");
     statPointDiv.innerText = statPoint;
     maxManaPoint = (intelligence * 10)
     let maxManaPointDiv = document.getElementById("maxManaPointDiv");
     maxManaPointDiv.innerText = maxManaPoint;
-}
-
-function updateagi() {
-    let agilityDiv = document.getElementById("agilityDiv");
-    agilityDiv.innerText = agility;
-    let statPointDiv = document.getElementById("statPointDiv");
-    statPointDiv.innerText = statPoint;
-}
-
-function updateluc() {
-    let luckDiv = document.getElementById("luckDiv");
-    luckDiv.innerText = luck;
-    let statPointDiv = document.getElementById("statPointDiv");
-    statPointDiv.innerText = statPoint;
 }
 
 function updateExp() {
@@ -415,24 +369,13 @@ function updateBonus(){
     bonusIntelligence = racialIntelligence;
     bonusAgility = racialAgility;
     bonusLuck = racialLuck;
-    let bonusStrengthDiv = document.getElementById("bonusStrengthDiv");
-    bonusStrengthDiv.innerText = bonusStrength;
-    let bonusPerceptionDiv = document.getElementById("bonusPerceptionDiv");
-    bonusPerceptionDiv.innerText = bonusPerception;
-    let bonusEnduranceDiv = document.getElementById("bonusEnduranceDiv");
-    bonusEnduranceDiv.innerText = bonusEndurance;
-    let bonusCharismaDiv = document.getElementById("bonusCharismaDiv");
-    bonusCharismaDiv.innerText = bonusCharisma;
-    let bonusIntelligenceDiv = document.getElementById("bonusIntelligenceDiv");
-    bonusIntelligenceDiv.innerText = bonusIntelligence;
-    let bonusAgilityDiv = document.getElementById("bonusAgilityDiv");
-    bonusAgilityDiv.innerText = bonusAgility;
-    let bonusLuckDiv = document.getElementById("bonusLuckDiv");
-    bonusLuckDiv.innerText = bonusLuck;
 }
 
 function damageHealth() {
   const hpInput = document.getElementById('InputHp').valueAsNumber;
+  if(isNaN(hpInput))
+  return
+
   if (actualHitPoint == 0) {
     console.log("Vous êtes déjà mort")
     return
@@ -451,6 +394,9 @@ function damageHealth() {
 
 function healHealth() {
   const hpInput = document.getElementById('InputHp').valueAsNumber;
+  if(isNaN(hpInput))
+  return
+
   if (actualHitPoint == maxHitPoint) {
     console.log("Vous êtes complètement guéri")
     return
@@ -470,6 +416,9 @@ function healHealth() {
 
 function costMana() {
   const manaInput = document.getElementById('InputMana').valueAsNumber;
+  if(isNaN(manaInput))
+  return
+
   if (actualManaPoint == 0) {
     console.log("Vous n'avez plus de mana")
     return
@@ -488,6 +437,9 @@ function costMana() {
 
 function regenMana() {
   const manaInput = document.getElementById('InputMana').valueAsNumber;
+  if(isNaN(manaInput))
+  return
+  
   if (actualManaPoint == maxManaPoint) {
     console.log("Votre mana est déjà à son maximum")
     return
@@ -539,38 +491,10 @@ let actualManaPointDiv = document.getElementById("actualManaPointDiv");
 actualManaPointDiv.innerText = actualManaPoint;
 let maxManaPointDiv = document.getElementById("maxManaPointDiv");
 maxManaPointDiv.innerText = maxManaPoint;
-let strengthDiv = document.getElementById("strengthDiv");
-strengthDiv.innerText = strength;
-let perceptionDiv = document.getElementById("perceptionDiv");
-perceptionDiv.innerText = perception;
-let enduranceDiv = document.getElementById("enduranceDiv");
-enduranceDiv.innerText = endurance;
-let charismaDiv = document.getElementById("charismaDiv");
-charismaDiv.innerText = charisma;
-let intelligenceDiv = document.getElementById("intelligenceDiv");
-intelligenceDiv.innerText = intelligence;
-let agilityDiv = document.getElementById("agilityDiv");
-agilityDiv.innerText = agility;
-let luckDiv = document.getElementById("luckDiv");
-luckDiv.innerText = luck;
 let statPointDiv = document.getElementById("statPointDiv");
 statPointDiv.innerText = statPoint;
 let experienceRequiredDiv = document.getElementById("experienceRequiredDiv");
 experienceRequiredDiv.innerText = experienceRequired;
-let bonusStrengthDiv = document.getElementById("bonusStrengthDiv");
-bonusStrengthDiv.innerText = bonusStrength;
-let bonusPerceptionDiv = document.getElementById("bonusPerceptionDiv");
-bonusPerceptionDiv.innerText = bonusPerception;
-let bonusEnduranceDiv = document.getElementById("bonusEnduranceDiv");
-bonusEnduranceDiv.innerText = bonusEndurance;
-let bonusCharismaDiv = document.getElementById("bonusCharismaDiv");
-bonusCharismaDiv.innerText = bonusCharisma;
-let bonusIntelligenceDiv = document.getElementById("bonusIntelligenceDiv");
-bonusIntelligenceDiv.innerText = bonusIntelligence;
-let bonusAgilityDiv = document.getElementById("bonusAgilityDiv");
-bonusAgilityDiv.innerText = bonusAgility;
-let bonusLuckDiv = document.getElementById("bonusLuckDiv");
-bonusLuckDiv.innerText = bonusLuck;
 let fullStrengthDiv = document.getElementById("fullStrengthDiv");
 fullStrengthDiv.innerText = fullStrength;
 let fullPerceptionDiv = document.getElementById("fullPerceptionDiv");
