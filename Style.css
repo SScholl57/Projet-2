@@ -1,3 +1,8 @@
+*{
+  color: rgb(192, 157, 91);
+  background-color: black;
+}
+
 .flexv {
     display: flex;
     flex-direction: column;
@@ -17,7 +22,7 @@
 }
 
  .border {
-   border: solid black 3px;
+   border: solid rgb(192, 157, 91) 3px;
  }
 
  .justifycontent-center {
@@ -52,6 +57,10 @@
   margin-top: 10px;
 }
 
+.marginbottom_10 {
+  margin-bottom: 10px;
+}
+
 .sizemain{
   width: 100vw;
   height: 100vh;
@@ -68,7 +77,6 @@
 }
 .size_30 {
   width: 30%;
-  height: 100%;
 }
 
 .size_50 {
@@ -91,4 +99,8 @@
 .marginside {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.backgroundname{
+  background-color: rgb(192, 157, 91);
 }

@@ -13,13 +13,13 @@
 <body>
     <script type="text/javascript" src="Script.js" defer></script>
     <main class="flexv justifycontent-center text-center sizemain">
-        <div class="flexv border sizestatus alignself-center">
+        <div class="flexv sizestatus alignself-center">
         <!-- ^ Div pour la totalité de la fenêtre -->
-            <Div>
+            <Div class="border size_30 alignself-center backgroundname">
                 <!-- Name -->
                 <input type="text" placeholder="Character Name">
             </Div>
-            <Div class="flexh">
+            <Div class="flexh justifycontent-center">
                 <!-- Fenêtre de status -->
                 <div class="flexv size_30 border marginside"> 
                     <!-- Status -->
@@ -112,7 +112,7 @@
                         </div>
                     </div>
 
-                    <div class="flexh margintop_10 border marginside">
+                    <div class="flexh margintop_10 marginbottom_10 border marginside">
                         <!-- Statistique -->
                         <div class="flexh size_50">
                             <div class="flexv spacebetween">
@@ -156,24 +156,14 @@
                             <div id="fullLuckDiv">0</div>
                         </div>
                     </div>
-                    <img src="Image/Argonien.png" alt="image" id="raceImg">
-                </div>
-                    <!-- Stuff -->
-                    Stuff
-                <div>
-
-                </div>
-
-                <div class=""> 
-                    <!-- Liste bonus -->
-                    Liste
+                        <img src="Image/Argonien.png" alt="image" id="raceImg">
                 </div>
             </Div>
         </div> 
 
         <div class="flexv">
             <div>
-                <button onclick="Dice20()" class="">Lancer un dès 20</button><br><br>
+                <button onclick="Dice20()" class="">Roll a D20</button><br><br>
                 <p id="diceDiv">0</p>
                 <p id="diceDiv20"></p>
             </div>
